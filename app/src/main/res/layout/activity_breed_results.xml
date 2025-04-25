@@ -20,7 +20,6 @@
         android:onClick="onBackPressed" />
 
 
-
     <!-- Results Header -->
     <TextView
         android:id="@+id/resultsHeader"
@@ -61,7 +60,6 @@
                     android:background=""
                     android:padding="4dp"
                     android:scaleType="centerCrop"
-                    tools:src=""
                     android:contentDescription="Dog breed image" />
             </FrameLayout>
 
@@ -73,8 +71,7 @@
                 android:layout_marginTop="16dp"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:textColor="#000000"
-                tools:text="Jack Russell" />
+                android:textColor="#000000" />
 
             <!-- Breed Match Percentage -->
             <TextView
@@ -83,11 +80,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:textSize="14sp"
-                android:textColor="#666666"
-                tools:text="The dog you scanned looks like it is 50% Jack Russell." />
+                android:textColor="#666666" />
 
             <!-- Breed Information Card -->
             <androidx.cardview.widget.CardView
+                android:id="@+id/breedInfoCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -113,7 +110,7 @@
                         android:textStyle="bold"
                         android:textColor="#000000" />
 
-                    <!-- Personality Section -->
+                    <!-- Personality Section Header -->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -123,16 +120,15 @@
                         android:textStyle="bold"
                         android:textColor="#333333" />
 
-                    <TextView
-                        android:id="@+id/personalityText"
+                    <!-- Dynamic Personality traits list -->
+                    <LinearLayout
+                        android:id="@+id/personalityTraitsList"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        tools:text="• Energetic, bold, and lively\n• Super intelligent but independent and stubborn\n• Loves to dig, chase, and explore\n• Loyal and alert\n• Great watchdog(s)" />
+                        android:orientation="vertical"
+                        android:layout_marginTop="4dp" />
 
-                    <!-- Lifespan Section -->
+                    <!-- Lifespan Section Header -->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -142,16 +138,16 @@
                         android:textStyle="bold"
                         android:textColor="#333333" />
 
+                    <!-- Dynamic Lifespan information -->
                     <TextView
                         android:id="@+id/lifespanText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:textSize="14sp"
-                        android:textColor="#666666"
-                        tools:text="• 13-16 Years" />
+                        android:textColor="#666666" />
 
-                    <!-- Coat & Color Section -->
+                    <!-- Coat & Color Section Header -->
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -161,16 +157,23 @@
                         android:textStyle="bold"
                         android:textColor="#333333" />
 
-                    <TextView
-                        android:id="@+id/coatColorText"
+                    <!-- Dynamic Coat & Color information list -->
+                    <LinearLayout
+                        android:id="@+id/coatColorList"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:textSize="14sp"
-                        android:textColor="#666666"
-                        tools:text="• Short, smooth or rough double coat\n• Mostly white with brown, black, or tan spots" />
+                        android:orientation="vertical"
+                        android:layout_marginTop="4dp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
     </ScrollView>
+
+    <!-- Loading indicator -->
+    <ProgressBar
+        android:id="@+id/loadingIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 </RelativeLayout>

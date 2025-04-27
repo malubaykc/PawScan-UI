@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PawsScanUI"
         tools:targetApi="31">
         <activity
+            android:name=".Scanned_Dog_Results"
+            android:exported="false" />
+        <activity
             android:name=".Breed_Results"
             android:exported="false" />
         <activity
